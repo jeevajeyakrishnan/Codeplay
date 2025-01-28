@@ -1,5 +1,6 @@
 ﻿using CodePlayApp;
 
 GeneratePass gp = new GeneratePass();
+string password=gp.GeneratePassword();
 
-gp.GeneratePassword();
+Console.WriteLine(password);

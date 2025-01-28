@@ -8,36 +8,33 @@ namespace CodePlayApp
 {
     public class GeneratePass
     {
-        public void GeneratePassword()
+        public string GeneratePassword()
         {
             Random rand = new Random();
 
             string Lowercase = "abcdefghijklmnopqrstuvwxyz";
             string Uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            int charsize = 3;
-            string Number = "1234567890";
+           
+            
             string SpeChar = "!@#$%^&*()";
-            int size = 1;
+            
             string randpasss = "";
 
-                int small = rand.Next(Lowercase.Length);
-                int caps = rand.Next(Uppercase.Length);
-                randpasss += Lowercase[small];
-                randpasss += Uppercase[caps];
+            int small = rand.Next(Lowercase.Length);
+            randpasss += Lowercase[small];
 
-          
+            int caps = rand.Next(Uppercase.Length);
+            randpasss += Uppercase[caps];
 
-            for (int i = 0; i < size; i++)
-            {
+            int num = rand.Next(0,9);
+            randpasss += num;
 
-                int num = rand.Next(Number.Length);
-                int spechar = rand.Next(SpeChar.Length);
+            int spechar = rand.Next(SpeChar.Length);
+            randpasss += SpeChar[spechar];
 
-                randpasss += Number[num];
-                randpasss += SpeChar[spechar];
+            return randpasss;
 
-            }
-            Console.WriteLine(randpasss);
         }
+        
     }
 }
